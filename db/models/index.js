@@ -39,7 +39,7 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
   },
 });
 
-fs.readdirSync(path.resolve(__dirname, "../../models"))
+fs.readdirSync(path.resolve(__dirname, "../models"))
   // fs.readdirSync("./db/models/")
   .filter((file) => {
     return (
