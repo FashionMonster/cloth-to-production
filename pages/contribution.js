@@ -1,5 +1,4 @@
 import axios from "axios";
-import Head from "next/Head";
 import React, { useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
@@ -24,14 +23,8 @@ export default function Contribute() {
   const [imgFile, setImgFile] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const modalMessage = useRef("");
-  const {
-    handleSubmit,
-    register,
-    errors,
-    getValues,
-    setError,
-    clearErrors,
-  } = useForm();
+  const { handleSubmit, register, errors, getValues, setError, clearErrors } =
+    useForm();
   const queryClient = useQueryClient();
 
   //ファイル選択イベント
@@ -117,10 +110,6 @@ export default function Contribute() {
 
   return (
     <div>
-      <Head>
-        <title>アパレル事業者向けの情報共有ツール Cloth-To 投稿画面</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-      </Head>
       <body className="grid grid-rows-layout gap-8 min-h-screen relative">
         <div id="headerWrapper">
           <Header isLogined={true} />
