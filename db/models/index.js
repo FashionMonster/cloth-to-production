@@ -1,3 +1,4 @@
+import * as pg from "pg";
 import { appLogInfo } from "../../apiUtils/appLogInfo";
 const fs = require("fs");
 const path = require("path");
@@ -16,6 +17,7 @@ config.logging = function (str) {
 
 let sequelize;
 sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
+  dialectModule: pg,
   dialect: "postgres",
   host: "cloth-to-production.cwrv527awugx.ap-northeast-1.rds.amazonaws.com",
   port: 5432,
