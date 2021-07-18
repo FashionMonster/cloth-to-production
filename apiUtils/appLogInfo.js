@@ -1,5 +1,6 @@
+import { logSetting } from "../log-config";
 const Log4js = require("log4js");
-Log4js.configure("./log-config.json");
+Log4js.configure(logSetting);
 
 const getAppLogger = Log4js.getLogger("application");
 
