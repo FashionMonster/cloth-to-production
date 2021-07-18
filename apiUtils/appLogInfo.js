@@ -1,9 +1,9 @@
 const Log4js = require("log4js");
-Log4js.configure("../log-config.json");
+Log4js.configure("./log-config.json");
 
 const getAppLogger = Log4js.getLogger("application");
 
-//引数：出力レベル、出力カテゴリ、データ
+//出力レベル、出力カテゴリ、データ
 const appLogInfo = (fileName, category, data) => {
   switch (category) {
     case "START":
