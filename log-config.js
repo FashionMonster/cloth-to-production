@@ -9,13 +9,13 @@ const logSetting = {
     },
     application: {
       type: "dateFile",
-      filename: "log/application/app.log",
+      filename: "tmp/log/application/app.log",
       pattern: "yyyyMMdd",
       alwaysIncludePattern: "true",
     },
     error: {
       type: "dateFile",
-      filename: "log/error/err.log",
+      filename: "tmp/log/error/err.log",
       pattern: "yyyyMMdd",
       alwaysIncludePattern: "true",
     },
