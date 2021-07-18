@@ -1,3 +1,5 @@
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+
 module.exports = {
   env: {
     // FIREBASE_KEY: "AIzaSyALSP94l7cVO7mi9gNKi6N36sATQoW3vEw",
@@ -20,4 +22,5 @@ module.exports = {
   images: {
     domains: ["firebasestorage.googleapis.com"], //ドメインを指定
   },
+  plugins: [new CaseSensitivePathsPlugin()],
 };
