@@ -1,0 +1,223 @@
+[2021-07-18T14:50:01.763] [INFO] application - getContribution.js：START
+[2021-07-18T14:50:01.764] [INFO] application - getContribution.js：REQUEST_DATA
+
+[2021-07-18T14:50:01.764] [INFO] application - getContribution.js：END
+[2021-07-18T14:50:19.273] [INFO] application - signup.js：START
+[2021-07-18T14:50:19.274] [INFO] application - signup.js：REQUEST_DATA
+userName：廣岡佑介
+email：yhirookajpn@gmail.com
+
+[2021-07-18T14:50:19.274] [INFO] application - insertUserAccounts.js：START
+[2021-07-18T14:50:19.465] [ERROR] application - insertUserAccounts.js：DATABASE
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND loth-to-production.cwrv527awugx.ap-northeast-1.rds.amazonaws.com
+    at Client._connectionCallback (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:175:24)
+    at Client._handleErrorWhileConnecting (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/pg/lib/client.js:305:19)
+    at Client._handleErrorEvent (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/pg/lib/client.js:315:19)
+    at Connection.emit (events.js:315:20)
+    at Socket.reportStreamError (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/pg/lib/connection.js:52:12)
+    at Socket.emit (events.js:315:20)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[2021-07-18T14:54:02.601] [INFO] application - signup.js：START
+[2021-07-18T14:54:02.602] [INFO] application - signup.js：REQUEST_DATA
+userName：廣岡佑介
+email：yhirookajpn@gmail.com
+
+[2021-07-18T14:54:02.602] [INFO] application - insertUserAccounts.js：START
+[2021-07-18T14:54:03.457] [INFO] application - insertUserAccounts.js：END
+[2021-07-18T14:54:03.458] [INFO] application - signup.js：END
+[2021-07-18T14:54:12.755] [INFO] application - getUserInfo.js：START
+[2021-07-18T14:54:12.755] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T14:54:12.755] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T14:54:13.504] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：null
+
+[2021-07-18T14:54:13.505] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T14:54:13.505] [INFO] application - getUserInfo.js：END
+[2021-07-18T14:54:14.189] [INFO] application - getAllGroupInfo.js：START
+[2021-07-18T14:54:14.190] [INFO] application - selectAllGroupAccounts.js：START
+[2021-07-18T14:54:14.887] [INFO] application - selectAllGroupAccounts.js：RESULT
+
+[2021-07-18T14:54:14.887] [INFO] application - selectAllGroupAccounts.js：END
+[2021-07-18T14:54:14.888] [INFO] application - getAllGroupInfo.js：END
+[2021-07-18T14:57:58.715] [INFO] application - createGroupAccount.js：START
+[2021-07-18T14:57:58.716] [INFO] application - createGroupAccount.js：REQUEST_DATA
+groupName：株式会社GSI
+email：yhirookajpn@gmail.com
+password：********
+
+[2021-07-18T14:57:58.793] [INFO] application - insertGroupAccounts.js：START
+[2021-07-18T14:57:59.644] [INFO] application - insertGroupAccounts.js：END
+[2021-07-18T14:57:59.645] [INFO] application - createGroupAccount.js：END
+[2021-07-18T14:58:06.435] [INFO] application - getUserInfo.js：START
+[2021-07-18T14:58:06.436] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T14:58:06.436] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T14:58:07.119] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：null
+
+[2021-07-18T14:58:07.119] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T14:58:07.120] [INFO] application - getUserInfo.js：END
+[2021-07-18T14:58:07.248] [INFO] application - getContribution.js：START
+[2021-07-18T14:58:07.249] [INFO] application - getContribution.js：REQUEST_DATA
+
+[2021-07-18T14:58:07.249] [INFO] application - getContribution.js：END
+[2021-07-18T14:58:20.840] [INFO] application - insertContribution.js：START
+[2021-07-18T14:58:20.841] [INFO] application - insertContribution.js：REQUEST_DATA
+imageFiles：[object Object]
+materialName：test
+category：2
+composition1：
+compositionRatio1：
+composition2：
+compositionRatio2：
+composition3：
+compositionRatio3：
+fabricStructure：
+color：
+pattern：
+processing：
+unitPrice：
+supplier：
+comment：
+imageUrl1：LnQ7fwcJpDkI6-TFtcTL0
+imageUrl2：
+imageUrl3：
+imageUrl4：
+imageUrl5：
+isInit：false
+userId：yhirookajpn@gmail.com
+groupId：null
+
+[2021-07-18T14:58:21.719] [INFO] application - insertContributionInfos.js：START
+[2021-07-18T14:58:21.773] [ERROR] application - insertContributionInfos.js：DATABASE
+SequelizeDatabaseError: null value in column "group_id" violates not-null constraint
+    at Query.formatError (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/dialects/postgres/query.js:386:16)
+    at Query.run (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/dialects/postgres/query.js:87:18)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async /Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/sequelize.js:619:16
+    at async PostgresQueryInterface.insert (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/dialects/abstract/query-interface.js:749:21)
+    at async ContributionInfos.save (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/model.js:3967:35)
+    at async Function.create (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/sequelize/lib/model.js:2207:12)
+    at async handler (webpack-internal:///./pages/api/insertContribution.js:58:7)
+    at async apiResolver (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/next-server.js:64:462)
+    at async Object.fn (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/next-server.js:56:492)
+    at async Router.execute (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/router.js:23:67)
+    at async DevServer.run (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/next-server.js:66:1042)
+    at async DevServer.handleRequest (/Users/yusukehirooka/Desktop/next_production/project/cloth-to/node_modules/next/dist/next-server/server/next-server.js:34:1081)
+[2021-07-18T14:58:47.345] [INFO] application - getUserInfo.js：START
+[2021-07-18T14:58:47.345] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T14:58:47.346] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T14:58:47.669] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：null
+
+[2021-07-18T14:58:47.670] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T14:58:47.670] [INFO] application - getUserInfo.js：END
+[2021-07-18T15:01:05.542] [INFO] application - getAllGroupInfo.js：START
+[2021-07-18T15:01:05.542] [INFO] application - selectAllGroupAccounts.js：START
+[2021-07-18T15:01:06.352] [INFO] application - selectAllGroupAccounts.js：RESULT
+groupId：yhirookajpn@gmail.com
+groupName：株式会社GSI
+
+[2021-07-18T15:01:06.352] [INFO] application - selectAllGroupAccounts.js：END
+[2021-07-18T15:01:06.353] [INFO] application - getAllGroupInfo.js：END
+[2021-07-18T15:01:13.193] [INFO] application - linkUserToGroup.js：START
+[2021-07-18T15:01:13.194] [INFO] application - linkUserToGroup.js：REQUEST_DATA
+groupId：yhirookajpn@gmail.com
+password：********
+userId：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:13.194] [INFO] application - selectGroupAccounts.js：START
+[2021-07-18T15:01:13.894] [INFO] application - selectGroupAccounts.js：RESULT
+group_pass：$2b$10$4Ynm5uh5BeEWzbS6mIeucuXZMTH8h9mSrY5pJaYY8y/LlrjBRDf3C
+
+[2021-07-18T15:01:13.894] [INFO] application - selectGroupAccounts.js：END
+[2021-07-18T15:01:13.977] [INFO] application - updateUserAccountsForLinkGroup.js：START
+[2021-07-18T15:01:14.021] [INFO] application - updateUserAccountsForLinkGroup.js：END
+[2021-07-18T15:01:14.022] [INFO] application - linkUserToGroup.js：END
+[2021-07-18T15:01:21.609] [INFO] application - getUserInfo.js：START
+[2021-07-18T15:01:21.609] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:21.609] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T15:01:22.319] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:22.320] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T15:01:22.321] [INFO] application - getUserInfo.js：END
+[2021-07-18T15:01:22.949] [INFO] application - getUserInfo.js：START
+[2021-07-18T15:01:22.949] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:22.949] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T15:01:23.694] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:23.695] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T15:01:23.695] [INFO] application - getUserInfo.js：END
+[2021-07-18T15:01:23.803] [INFO] application - getContribution.js：START
+[2021-07-18T15:01:23.803] [INFO] application - getContribution.js：REQUEST_DATA
+groupId：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:23.803] [INFO] application - getContribution.js：END
+[2021-07-18T15:01:48.180] [INFO] application - insertContribution.js：START
+[2021-07-18T15:01:48.180] [INFO] application - insertContribution.js：REQUEST_DATA
+imageFiles：[object Object]
+materialName：test
+category：2
+composition1：
+compositionRatio1：
+composition2：
+compositionRatio2：
+composition3：
+compositionRatio3：
+fabricStructure：
+color：
+pattern：
+processing：
+unitPrice：
+supplier：
+comment：
+imageUrl1：rnnMyrVqxeKkEeAQE8tvX
+imageUrl2：
+imageUrl3：
+imageUrl4：
+imageUrl5：
+isInit：false
+userId：yhirookajpn@gmail.com
+groupId：yhirookajpn@gmail.com
+
+[2021-07-18T15:01:49.025] [INFO] application - insertContributionInfos.js：START
+[2021-07-18T15:01:49.071] [INFO] application - insertContributionInfos.js：END
+[2021-07-18T15:01:49.071] [INFO] application - selectContributionId.js：START
+[2021-07-18T15:01:49.383] [INFO] application - selectContributionId.js：RESULT
+contribute_id：2
+
+[2021-07-18T15:01:49.383] [INFO] application - selectContributionId.js：END
+[2021-07-18T15:01:49.384] [INFO] application - insertContributionImages.js：START
+[2021-07-18T15:01:49.434] [INFO] application - insertContributionImages.js：END
+[2021-07-18T15:01:49.469] [INFO] application - insertContribution.js：END
+[2021-07-18T15:22:17.823] [INFO] application - getUserInfo.js：START
+[2021-07-18T15:22:17.823] [INFO] application - getUserInfo.js：REQUEST_DATA
+email：yhirookajpn@gmail.com
+
+[2021-07-18T15:22:17.823] [INFO] application - selectUserAccounts.js：START
+[2021-07-18T15:22:18.656] [INFO] application - selectUserAccounts.js：RESULT
+userName：廣岡佑介
+groupId：yhirookajpn@gmail.com
+
+[2021-07-18T15:22:18.656] [INFO] application - selectUserAccounts.js：END
+[2021-07-18T15:22:18.656] [INFO] application - getUserInfo.js：END

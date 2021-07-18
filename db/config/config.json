@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "19940302hy",
+    "database": "cloth_to",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "schema": "cloth_to",
+    "searchPath": "cloth_to",
+    "dialectOptions": {
+      "prependSearchPath": true
+    },
+    "migrationStorageTableName": "sequelize_meta"
+  },
+  "production": {
+    "username": "cloth_to_pro",
+    "password": "HY19940302hy",
+    "database": "cloth_to",
+    "host": "cloth-to-production.cwrv527awugx.ap-northeast-1.rds.amazonaws.com",
+    "dialect": "postgres",
+    "schema": "cloth_to",
+    "searchPath": "cloth_to",
+    "dialectOptions": {
+      "prependSearchPath": true,
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    },
+    "migrationStorageTableName": "sequelize_meta"
+  }
+}
