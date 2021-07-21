@@ -44,6 +44,8 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 // fs.readdirSync("./var/task/db/models/")
 // fs.readdirSync(__dirname + "db/models/")
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
+console.log("__dirname > " + __dirname) // TODO 削除
+console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
 fs.readdirSync(path.resolve(__dirname))
   .filter((file) => {
     return (
