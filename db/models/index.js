@@ -48,9 +48,7 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 //console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
 fs.readdirSync(process.cwd()+"../")
   .forEach((file) => {
-  fs.readdirSync(file).forEach((file) => {
   console.log("file > " + file) // TODO 削除
-  }
   }
 
 //    return (
