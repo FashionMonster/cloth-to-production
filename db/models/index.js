@@ -52,9 +52,9 @@ fs.readdirSync("./")
   })
   .forEach((file) => {
   console.log("file > " + file) // TODO 削除
-    const model = require("./" + file)(sequelize, Sequelize.DataTypes);
-    console.log("model > " + model) // TODO 削除
-    db[model.name] = model;
+//    const model = require("./" + file)(sequelize, Sequelize.DataTypes);
+//    console.log("model > " + model) // TODO 削除
+//    db[model.name] = model;
   });
 
 Object.keys(db).forEach((modelName) => {
