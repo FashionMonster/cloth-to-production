@@ -44,13 +44,11 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 // fs.readdirSync("./var/task/db/models/")
 // fs.readdirSync(__dirname + "db/models/")
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
-//console.log("__filename" + __filename) // TODO 削除
-//console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
+console.log("__filename" + __filename) // TODO 削除
+console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
 fs.readdirSync(process.cwd()+"../")
   .forEach((file) => {
   console.log("file > " + file) // TODO 削除
-  }
-
 //    return (
 //      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
 //    );
