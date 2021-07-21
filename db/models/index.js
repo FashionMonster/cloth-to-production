@@ -44,7 +44,7 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 // fs.readdirSync("./var/task/db/models/")
 // fs.readdirSync(__dirname + "db/models/")
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
-fs.readdirSync("./")
+fs.readdirSync(path.resolve(__dirname))
   .filter((file) => {
     return (
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
