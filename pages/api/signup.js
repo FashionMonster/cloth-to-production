@@ -16,6 +16,7 @@ export default async function handler(req, res) {
     });
 
     //ユーザー情報登録
+    console.log("ユーザー情報登録") // TODO 削除
     await insertUserAccounts(userAccount);
 
     appLogInfo(CONST.FILE_NAME.SIGNUP, "END");
@@ -24,6 +25,8 @@ export default async function handler(req, res) {
       res: "",
     });
   } catch (e) {
+
+  console.log(e) // TODO 削除
     //画面にエラー情報を返却
     //キー重複した場合
     if (e.parent.code === "23505") {
