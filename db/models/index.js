@@ -46,7 +46,7 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
 console.log("process.cwd()" + process.cwd()) // TODO 削除
 console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
-fs.readdirSync(path.resolve(process.cwd()))
+fs.readdirSync(path.resolve(process.cwd())+"/.next/serverless/db/models")
   .filter((file) => {
     return (
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
