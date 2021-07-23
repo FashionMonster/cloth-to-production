@@ -11,12 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     { underscored: true }
   );
-  // UserAccounts.associate = function (models) {
-  //   // associations can be defined here
-  //   UserAccounts.hasMany(models.ContributionInfos, {
-  //     foreignKey: "user_id",
-  //     sourceKey: "user_id",
-  //   });
-  // };
+  UserAccounts.associate = function (models) {
+    UserAccounts.hasMany(models.ContributionInfos, {
+      foreignKey: "user_id",
+      sourceKey: "user_id",
+    });
+  };
   return UserAccounts;
 };

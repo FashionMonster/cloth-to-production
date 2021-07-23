@@ -2,6 +2,9 @@ import * as pg from "pg";
 import { Sequelize } from "sequelize";
 import { appLogInfo } from "../../apiUtils/appLogInfo";
 const UserAccounts = require("./useraccounts");
+const GroupAccounts = require("./groupaccounts");
+const ContributionInfos = require("./contributioninfos");
+const ContributionImages = require("./contributionimages");
 const env = process.env.NODE_ENV || "production";
 const config = require(__dirname + "/../config/config.json")[env];
 
@@ -39,13 +42,12 @@ let sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 //モデルを生成
 const db = {
   UserAccounts: UserAccounts(sequelize, Sequelize.DataTypes),
-  // GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
-  // ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
-  // ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),
+  GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
+  ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
+  ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),
 };
 
 Object.keys(db).forEach((modelName) => {
-  console.log("modelName：" + modelName);
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }

@@ -1,25 +1,6 @@
-const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class ContributionInfos extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-      ContributionInfos.belongsTo(models.ContributionImages, {
-        foreignKey: "contribution_id",
-        targetKey: "contribution_id",
-      });
-      ContributionInfos.belongsTo(models.UserAccounts, {
-        as: "UserAccounts",
-        foreignKey: "user_id",
-        targetKey: "user_id",
-      });
-    }
-  }
-  ContributionInfos.init(
+  const ContributionInfos = sequelize.define(
+    "ContributionInfos",
     {
       contribution_id: {
         type: DataTypes.INTEGER,
@@ -45,11 +26,18 @@ module.exports = (sequelize, DataTypes) => {
       comment: DataTypes.STRING(200),
       is_deleted: DataTypes.BOOLEAN,
     },
-    {
-      sequelize,
-      modelName: "ContributionInfos",
-      underscored: true,
-    }
+    { underscored: true }
   );
+  ContributionInfos.associate = function (models) {
+    ContributionInfos.belongsTo(models.ContributionImages, {
+      foreignKey: "contribution_id",
+      targetKey: "contribution_id",
+    });
+    ContributionInfos.belongsTo(models.UserAccounts, {
+      as: "UserAccounts",
+      foreignKey: "user_id",
+      targetKey: "user_id",
+    });
+  };
   return ContributionInfos;
 };
