@@ -1,4 +1,4 @@
-const userAccounts = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const UserAccounts = sequelize.define(
     "UserAccounts",
     {
@@ -20,5 +20,3 @@ const userAccounts = (sequelize, DataTypes) => {
   // };
   return UserAccounts;
 };
-
-export default userAccounts;
