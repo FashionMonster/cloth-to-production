@@ -1,12 +1,12 @@
 import * as pg from "pg";
+import { Sequelize } from "sequelize";
 import { appLogInfo } from "../../apiUtils/appLogInfo";
-const fs = require("fs");
-const path = require("path");
-const Sequelize = require("sequelize");
-const basename = path.basename(__filename);
+import { ContributionImages } from "./contributionimages";
+import { ContributionInfos } from "./contributioninfos";
+import { GroupAccounts } from "./groupaccounts";
+import { UserAccounts } from "./useraccounts";
 const env = process.env.NODE_ENV || "production";
 const config = require(__dirname + "/../config/config.json")[env];
-const db = {};
 
 //ログ設定
 config.logging = function (str) {
@@ -15,8 +15,8 @@ config.logging = function (str) {
   appLogInfo("index.js(dbConfigFile)", "SQL", sql);
 };
 
-let sequelize;
-sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
+//DB接続
+let sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
   dialectModule: pg,
   dialect: "postgres",
   host: "cloth-to-production.cwrv527awugx.ap-northeast-1.rds.amazonaws.com",
@@ -39,25 +39,13 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
   },
 });
 
-// fs.readdirSync("./db/models/")
-// fs.readdirSync("./var/task/.next/serverless/db/models/")
-// fs.readdirSync("./var/task/db/models/")
-// fs.readdirSync(__dirname + "db/models/")
-//fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
-//console.log("__filename" + __filename)
-//console.log("path.resolve(__dirname) > " + path.resolve(__dirname))
-fs.readdirSync(path.resolve("./"))
-  .filter((file) => {
-    console.log("all_file > " + file);
-    return (
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-    );
-  })
-  .forEach((file) => {
-    console.log("file > " + file);
-    const model = require("./" + file)(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
-  });
+//モデルを生成
+const db = {
+  UserAccounts: UserAccounts(sequelize, Sequelize.DataTypes),
+  GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
+  ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
+  ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),
+};
 
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
