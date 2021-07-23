@@ -46,7 +46,7 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
 //console.log("__filename" + __filename)
 //console.log("path.resolve(__dirname) > " + path.resolve(__dirname))
-fs.readdirSync(path.resolve("../"))
+fs.readdirSync(path.resolve("./"))
   .filter((file) => {
     console.log("all_file > " + file);
     return (
