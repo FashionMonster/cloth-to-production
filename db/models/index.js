@@ -44,21 +44,20 @@ sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 // fs.readdirSync("./var/task/db/models/")
 // fs.readdirSync(__dirname + "db/models/")
 //fs.readdirSync(process.cwd() + "/db/models/" || __dirname)
-console.log("__filename" + __filename) // TODO 削除
-console.log("path.resolve(__dirname) > " + path.resolve(__dirname)) // TODO 削除
-fs.readdirSync(process.cwd()+"../")
-  .forEach((file) => {
-  console.log("file > " + file) // TODO 削除
-//    return (
-//      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-//    );
+//console.log("__filename" + __filename)
+//console.log("path.resolve(__dirname) > " + path.resolve(__dirname))
+fs.readdirSync(path.resolve("../"))
+  .filter((file) => {
+    console.log("all_file > " + file);
+    return (
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    );
   })
-//  .forEach((file) => {
-//  console.log("file > " + file) // TODO 削除
-//    const model = require("./" + file)(sequelize, Sequelize.DataTypes);
-//    console.log("model > " + model) // TODO 削除
-//    db[model.name] = model;
-//  });
+  .forEach((file) => {
+    console.log("file > " + file);
+    const model = require("./" + file)(sequelize, Sequelize.DataTypes);
+    db[model.name] = model;
+  });
 
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
