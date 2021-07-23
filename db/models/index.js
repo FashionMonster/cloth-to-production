@@ -1,7 +1,7 @@
 import * as pg from "pg";
 import { Sequelize } from "sequelize";
 import { appLogInfo } from "../../apiUtils/appLogInfo";
-// import { UserAccounts } from "./useraccounts";
+import { userAccounts } from "./useraccounts";
 const env = process.env.NODE_ENV || "production";
 const config = require(__dirname + "/../config/config.json")[env];
 
@@ -38,7 +38,7 @@ let sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
 
 //モデルを生成
 const db = {
-  // UserAccounts: UserAccounts(sequelize, Sequelize.DataTypes),
+  UserAccounts: userAccounts(sequelize, Sequelize.DataTypes),
   // GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
   // ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
   // ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),

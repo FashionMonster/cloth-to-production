@@ -1,5 +1,4 @@
-/* eslint-disable import/no-anonymous-default-export */
-export default (sequelize, DataTypes) => {
+const userAccounts = (sequelize, DataTypes) => {
   const UserAccounts = sequelize.define(
     "UserAccounts",
     {
@@ -21,3 +20,5 @@ export default (sequelize, DataTypes) => {
   // };
   return UserAccounts;
 };
+
+export default userAccounts;
