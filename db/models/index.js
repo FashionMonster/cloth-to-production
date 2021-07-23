@@ -39,6 +39,9 @@ let sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
   },
 });
 
+console.log("通過");
+console.log("UserAccounts" + UserAccounts(sequelize, Sequelize.DataTypes));
+
 //モデルを生成
 const db = {
   UserAccounts: UserAccounts(sequelize, Sequelize.DataTypes),
