@@ -1,9 +1,6 @@
 import * as pg from "pg";
 import { Sequelize } from "sequelize";
 import { appLogInfo } from "../../apiUtils/appLogInfo";
-import { ContributionImages } from "./contributionimages";
-import { ContributionInfos } from "./contributioninfos";
-import { GroupAccounts } from "./groupaccounts";
 import { UserAccounts } from "./useraccounts";
 const env = process.env.NODE_ENV || "production";
 const config = require(__dirname + "/../config/config.json")[env];
@@ -39,15 +36,12 @@ let sequelize = new Sequelize("cloth_to", "cloth_to_pro", "HY19940302hy", {
   },
 });
 
-console.log("通過");
-console.log("UserAccounts" + UserAccounts(sequelize, Sequelize.DataTypes));
-
 //モデルを生成
 const db = {
   UserAccounts: UserAccounts(sequelize, Sequelize.DataTypes),
-  GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
-  ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
-  ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),
+  // GroupAccounts: GroupAccounts(sequelize, Sequelize.DataTypes),
+  // ContributionInfos: ContributionInfos(sequelize, Sequelize.DataTypes),
+  // ContributionImages: ContributionImages(sequelize, Sequelize.DataTypes),
 };
 
 Object.keys(db).forEach((modelName) => {
