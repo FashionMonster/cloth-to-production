@@ -1,10 +1,24 @@
 //テキスト入力コンポーネント
 const InputText = (props) => {
+  let divStyle;
+  let inputStyle;
+
+  switch (props.width) {
+    case 48:
+      divStyle = "w-48 h-8";
+      inputStyle =
+        "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+      break;
+    case 408:
+      divStyle = "w-408 h-8";
+      inputStyle =
+        "w-408 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+      break;
+    default:
+  }
+
   // const divStyle = `w-${props.width} h-8`;
   // const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
-
-  const divStyle = `w-${props.width} h-8`;
-  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
 
   return (
     <div className={divStyle}>
