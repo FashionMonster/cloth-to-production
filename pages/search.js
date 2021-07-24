@@ -46,8 +46,7 @@ export default function Search() {
 
   if (isFetching || isLoading) return <Loading />;
 
-  //ログインしていない場合に、画面が見えないようにする
-  //応急処置なので、対応予定
+  //ログインしていない場合に、画面が見えないようにする。応急処置につき対応予定
   if (value.userInfo.userId === "") {
     return <></>;
   }
