@@ -1,10 +1,15 @@
 //テキスト入力コンポーネント
 const InputText = (props) => {
+  //テンプレートリテラルが使用できないため、switch文でセット
   let divStyle;
   let inputStyle;
-
   switch (props.width) {
     case "48":
+      divStyle = "w-48 h-8";
+      inputStyle =
+        "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+      break;
+    case "280":
       divStyle = "w-48 h-8";
       inputStyle =
         "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
@@ -15,10 +20,11 @@ const InputText = (props) => {
         "w-408 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
       break;
     default:
+      divStyle = "w-48 h-8";
+      inputStyle =
+        "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+      break;
   }
-
-  // const divStyle = `w-${props.width} h-8`;
-  // const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
 
   return (
     <div className={divStyle}>

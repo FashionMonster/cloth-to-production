@@ -1,7 +1,22 @@
 //素材比率コンポーネント
 const InputCompositionRatio = (props) => {
-  const divStyle = `w-${props.width} h-8`;
-  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400`;
+  //テンプレートリテラルが使用できないため、switch文でセット
+  let divStyle;
+  let inputStyle;
+  switch (props.width) {
+    case "16":
+      divStyle = "w-16 h-8";
+      inputStyle = "w-16 h-8 border border-solid rounded-sm border-gray-400";
+      break;
+    case "20":
+      divStyle = "w-20 h-8";
+      inputStyle = "w-20 h-8 border border-solid rounded-sm border-gray-400";
+      break;
+    default:
+      divStyle = "w-16 h-8";
+      inputStyle = "w-16 h-8 border border-solid rounded-sm border-gray-400";
+      break;
+  }
 
   return (
     <div className={divStyle}>

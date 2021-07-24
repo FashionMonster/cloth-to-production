@@ -1,7 +1,7 @@
 //テキスト入力コンポーネント
 const InputPassword = (props) => {
-  const divStyle = `w-${props.width} h-8`;
-  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400`;
+  const divStyle = "w-48 h-8";
+  const inputStyle = "w-48 h-8 border border-solid rounded-sm border-gray-400";
 
   return (
     <div className={divStyle}>

@@ -1,7 +1,8 @@
 //テキスト入力コンポーネント
 const InputTextarea = (props) => {
-  const divStyle = `w-${props.width} h-112`;
-  const textareaStyle = `w-${props.width} h-112 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
+  const divStyle = "w-408 h-112";
+  const textareaStyle =
+    "w-408 h-112 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
 
   return (
     <div className={divStyle}>

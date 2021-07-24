@@ -1,7 +1,25 @@
 //分類選択コンポーネント
 const SelectCategory = (props) => {
-  const divStyle = `w-${props.width} h-8`;
-  const selectStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100`;
+  //テンプレートリテラルが使用できないため、switch文でセット
+  let divStyle;
+  let selectStyle;
+  switch (props.width) {
+    case "280":
+      divStyle = "w-280 h-8";
+      selectStyle =
+        "w-280 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100";
+      break;
+    case "408":
+      divStyle = "w-408 h-8";
+      selectStyle =
+        "w-408 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100";
+      break;
+    default:
+      divStyle = "w-280 h-8";
+      selectStyle =
+        "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+      break;
+  }
 
   return (
     <div className={divStyle}>
