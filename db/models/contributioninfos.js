@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   ContributionInfos.associate = function (models) {
     ContributionInfos.belongsTo(models.ContributionImages, {
+      as: "ContributionImages",
       foreignKey: "contribution_id",
       targetKey: "contribution_id",
     });
