@@ -3,8 +3,9 @@ const InputText = (props) => {
   // const divStyle = `w-${props.width} h-8`;
   // const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
 
-  const divStyle = props.width + " h-8";
+  const divStyle = "w-" + props.width + " h-8";
   const inputStyle =
+    "w-" +
     props.width +
     " h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
 
