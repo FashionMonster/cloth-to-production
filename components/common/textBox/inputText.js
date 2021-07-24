@@ -4,12 +4,12 @@ const InputText = (props) => {
   let inputStyle;
 
   switch (props.width) {
-    case 48:
+    case "48":
       divStyle = "w-48 h-8";
       inputStyle =
         "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
       break;
-    case 408:
+    case "408":
       divStyle = "w-408 h-8";
       inputStyle =
         "w-408 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
