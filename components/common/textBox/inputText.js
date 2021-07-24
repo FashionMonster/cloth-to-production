@@ -10,9 +10,9 @@ const InputText = (props) => {
         "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
       break;
     case "280":
-      divStyle = "w-48 h-8";
+      divStyle = "w-280 h-8";
       inputStyle =
-        "w-48 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
+        "w-280 h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black";
       break;
     case "408":
       divStyle = "w-408 h-8";

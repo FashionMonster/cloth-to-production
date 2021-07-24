@@ -12,6 +12,10 @@ const SelectComposition = (props) => {
       divStyle = "w-20 h-8";
       selectStyle = "w-20 h-8 border border-solid rounded-sm border-gray-400";
       break;
+    case "120":
+      divStyle = "w-120 h-8";
+      selectStyle = "w-120 h-8 border border-solid rounded-sm border-gray-400";
+      break;
     default:
       divStyle = "w-16 h-8";
       selectStyle = "w-16 h-8 border border-solid rounded-sm border-gray-400";
