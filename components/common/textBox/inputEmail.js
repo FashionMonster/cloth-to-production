@@ -1,14 +1,17 @@
 //テキスト入力コンポーネント
 const InputEmail = (props) => {
+  const divStyle = `w-${props.width} h-8`;
+  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400`;
+
   return (
-    <div className={`w-${props.width} h-8`}>
+    <div className={divStyle}>
       <input
         type="email"
         name={props.name}
         id={props.id}
         defaultValue={props.defaultValue}
         placeholder={props.placeholder}
-        className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400`}
+        className={inputStyle}
         ref={props.register}
       />
       {props.errors?.type === "required" && (

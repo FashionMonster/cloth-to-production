@@ -1,11 +1,14 @@
 //素材比率コンポーネント
 const InputCompositionRatio = (props) => {
+  const divStyle = `w-${props.width} h-8`;
+  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400`;
+
   return (
-    <div className={`w-${props.width} h-8`}>
+    <div className={divStyle}>
       <input
         type="number"
         name={props.name}
-        className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400`}
+        className={inputStyle}
         ref={props.register}
       />
       {props.errors?.type === "required" && (

@@ -1,11 +1,14 @@
 //素材選択コンポーネント
 const SelectComposition = (props) => {
+  const divStyle = `w-${props.width} h-8`;
+  const selectStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400`;
+
   return (
-    <div className={`w-${props.width} h-8`}>
+    <div className={divStyle}>
       <select
         name={props.name}
         id={props.id}
-        className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400`}
+        className={selectStyle}
         ref={props.register}
       >
         <option value=""></option>

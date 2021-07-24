@@ -1,7 +1,10 @@
 //テキスト入力コンポーネント
 const InputTextarea = (props) => {
+  const divStyle = `w-${props.width} h-112`;
+  const textareaStyle = `w-${props.width} h-112 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
+
   return (
-    <div className={`w-${props.width} h-112`}>
+    <div className={divStyle}>
       <textarea
         name={props.name}
         id={props.id}
@@ -9,7 +12,7 @@ const InputTextarea = (props) => {
         ref={props.register}
         disabled={props.isDisabled}
         defaultValue={props.defaultValue}
-        className={`w-${props.width} h-112 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`}
+        className={textareaStyle}
       />
       {props.errors?.type === "maxLength" && (
         <div className="text-red-600 text-sm">最大は200文字です</div>

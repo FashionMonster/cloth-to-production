@@ -1,11 +1,14 @@
 //分類選択コンポーネント
 const SelectCategory = (props) => {
+  const divStyle = `w-${props.width} h-8`;
+  const selectStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100`;
+
   return (
-    <div className={`w-${props.width} h-8`}>
+    <div className={divStyle}>
       <select
         name={props.name}
         id={props.id}
-        className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100`}
+        className={selectStyle}
         ref={props.register}
         disabled={props.isDisabled}
         defaultValue={props.defaultValue}

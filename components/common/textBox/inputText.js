@@ -1,7 +1,10 @@
 //テキスト入力コンポーネント
 const InputText = (props) => {
+  const divStyle = `w-${props.width} h-8`;
+  const inputStyle = `w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`;
+
   return (
-    <div className={`w-${props.width} h-8`}>
+    <div className={divStyle}>
       <input
         type="text"
         name={props.name}
@@ -10,7 +13,7 @@ const InputText = (props) => {
         ref={props.register}
         disabled={props.isDisabled}
         defaultValue={props.defaultValue}
-        className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`}
+        className={inputStyle}
       />
       {props.errors?.type === "required" && (
         <div className="text-red-600 text-sm relative">必須入力です</div>
