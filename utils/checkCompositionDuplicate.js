@@ -1,4 +1,5 @@
-const chkCompositionDuplicate = (getValues, setError, clearErrors) => {
+//true:エラーあり　false:エラーなし
+const checkCompositionDuplicate = (getValues, setError, clearErrors) => {
   const allValues = getValues(["composition1", "composition2", "composition3"]);
 
   const comp1Val = allValues["composition1"];
@@ -13,9 +14,13 @@ const chkCompositionDuplicate = (getValues, setError, clearErrors) => {
       type: "duplicate",
       message: "選択が重複しています",
     });
+
+    return true;
   } else {
     clearErrors(["composition1", "composition2", "composition3"]);
   }
+
+  return false;
 };
 
-export { chkCompositionDuplicate };
+export { checkCompositionDuplicate };

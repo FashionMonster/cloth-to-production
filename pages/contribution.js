@@ -14,6 +14,7 @@ import { PreviewMainArea } from "../components/common/preview/previewMainArea";
 import { PreviewSubArea } from "../components/common/preview/previewSubArea";
 import ContributionForm from "../components/contributionPage/contributionForm";
 import { CONST } from "../constants/const";
+import { checkCompositionDuplicate } from "../utils/checkCompositionDuplicate";
 import { checkCompositionRatio } from "../utils/checkCompositionRatio";
 import { isImageExt } from "../utils/isImageExt";
 import { readFile } from "../utils/readFile";
@@ -51,7 +52,11 @@ export default function Contribute() {
 
   //投稿イベント
   const insertContribution = (data) => {
-    if (checkCompositionRatio(getValues, setError, clearErrors)) {
+    //複合チェックでエラーが含まれている場合
+    if (
+      checkCompositionRatio(getValues, setError, clearErrors) ||
+      checkCompositionDuplicate(getValues, setError, clearErrors)
+    ) {
       return;
     }
 

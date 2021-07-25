@@ -15,6 +15,8 @@ import { PreviewMainArea } from "../../components/common/preview/previewMainArea
 import { PreviewSubArea } from "../../components/common/preview/previewSubArea";
 import ContributionForm from "../../components/contributionPage/contributionForm";
 import { CONST } from "../../constants/const";
+import { checkCompositionDuplicate } from "../../utils/checkCompositionDuplicate";
+import { checkCompositionRatio } from "../../utils/checkCompositionRatio";
 import { fetchContributionDetail } from "../../utils/getContributionDetail/fetchContributionDetail";
 import { isImageExt } from "../../utils/isImageExt";
 import { readFile } from "../../utils/readFile";
@@ -24,14 +26,8 @@ export default function ContributionId() {
   const [imgFile, setImgFile] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const modalMessage = useRef("");
-  const {
-    handleSubmit,
-    register,
-    errors,
-    getValues,
-    setError,
-    clearErrors,
-  } = useForm();
+  const { handleSubmit, register, errors, getValues, setError, clearErrors } =
+    useForm();
   const router = useRouter();
   const value = useContext(AuthContext);
   const queryClient = useQueryClient();
@@ -72,22 +68,30 @@ export default function ContributionId() {
 
   //投稿更新イベント
   const updateContribution = (data) => {
+    //複合チェックでエラーが含まれている場合
+    if (
+      checkCompositionRatio(getValues, setError, clearErrors) ||
+      checkCompositionDuplicate(getValues, setError, clearErrors)
+    ) {
+      return;
+    }
+
+    //拡張子チェック
+    for (const file of imgFile) {
+      if (file.fileName !== "") {
+        if (!isImageExt(file.fileName)) {
+          setIsOpen(true);
+          modalMessage.current = CONST.ERR_MSG.WORNG_EXTENSION;
+          return;
+        }
+      }
+    }
+
     mutation.mutate(data);
   };
 
   const mutation = useMutation(
     async (formData) => {
-      //拡張子チェック
-      for (const file of imgFile) {
-        if (file.fileName !== "") {
-          if (!isImageExt(file.fileName)) {
-            setIsOpen(true);
-            modalMessage.current = CONST.ERR_MSG.WORNG_EXTENSION;
-            return;
-          }
-        }
-      }
-
       //FireBase Storageに画像アップロード
       const idList = uploadImage(imgFile);
 

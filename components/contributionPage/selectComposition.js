@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-onchange */
-import { chkCompositionDuplicate } from "../../utils/chkCompositionDuplicate";
+import { checkCompositionDuplicate } from "../../utils/checkCompositionDuplicate";
 
 //素材選択コンポーネント
 const SelectComposition = (props) => {
@@ -11,7 +11,7 @@ const SelectComposition = (props) => {
         className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black disabled:opacity-100`}
         ref={props.register}
         onChange={() =>
-          chkCompositionDuplicate(
+          checkCompositionDuplicate(
             props.getValues,
             props.setError,
             props.clearErrors
