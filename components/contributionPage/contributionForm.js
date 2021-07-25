@@ -38,7 +38,7 @@ export default function ContributionForm(props) {
           <SelectComposition
             name="composition1"
             id="composition1"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}
@@ -51,7 +51,7 @@ export default function ContributionForm(props) {
           />
           <InputCompositionRatio
             name="compositionRatio1"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}
@@ -67,7 +67,7 @@ export default function ContributionForm(props) {
           <SelectComposition
             name="composition2"
             id="composition2"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}
@@ -80,7 +80,7 @@ export default function ContributionForm(props) {
           />
           <InputCompositionRatio
             name="compositionRatio2"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}
@@ -96,7 +96,7 @@ export default function ContributionForm(props) {
           <SelectComposition
             name="composition3"
             id="composition3"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}
@@ -109,7 +109,7 @@ export default function ContributionForm(props) {
           />
           <InputCompositionRatio
             name="compositionRatio3"
-            register={props.register()}
+            // register={props.register()}
             getValues={props.getValues}
             setError={props.setError}
             clearErrors={props.clearErrors}

@@ -63,7 +63,7 @@ export default function Search() {
         <Navigation />
       </div>
       <p className="text-center">
-        投稿された情報を閲覧、収集できます。
+        同じグループに所属するユーザーの投稿情報を閲覧、収集できます。
         <br />
         新しいアイデアが湧いたり、創りたい商品を実現するキッカケになります。
       </p>

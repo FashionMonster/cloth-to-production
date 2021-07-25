@@ -65,9 +65,9 @@ export default function ContributionHistory() {
         <Navigation />
       </div>
       <p className="text-center">
-        投稿された情報を閲覧、収集できます。
+        あなたが投稿した情報を閲覧、編集できます。
         <br />
-        新しいアイデアが湧いたり、創りたい商品を実現するキッカケになります。
+        情報が古い場合は最新の情報に更新しましょう。
       </p>
       <main className="grid grid-cols-contents">
         <div className="col-start-2 col-end-3">
