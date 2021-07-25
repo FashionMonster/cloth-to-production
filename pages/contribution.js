@@ -14,6 +14,7 @@ import { PreviewMainArea } from "../components/common/preview/previewMainArea";
 import { PreviewSubArea } from "../components/common/preview/previewSubArea";
 import ContributionForm from "../components/contributionPage/contributionForm";
 import { CONST } from "../constants/const";
+import { checkCompositionRatio } from "../utils/checkCompositionRatio";
 import { isImageExt } from "../utils/isImageExt";
 import { readFile } from "../utils/readFile";
 import { uploadImage } from "../utils/uploadImage";
@@ -50,17 +51,9 @@ export default function Contribute() {
 
   //投稿イベント
   const insertContribution = (data) => {
-    if (errors?.type === "totalRatioMax") {
-      setError("compositionRatio2", {
-        type: "totalRatioMax",
-        message: "合計最大値は100です",
-      });
-      return;
-    } else if (errors?.type === "ratioNegative") {
-      setError("compositionRatio2", {
-        type: "ratioNegative",
-        message: "最小値は1です",
-      });
+    checkCompositionRatio(getValues, setError, clearErrors);
+
+    if (errors?.type === "totalRatioMax" || errors?.type === "ratioNegative") {
       return;
     }
 
