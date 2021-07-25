@@ -51,9 +51,7 @@ export default function Contribute() {
 
   //投稿イベント
   const insertContribution = (data) => {
-    checkCompositionRatio(getValues, setError, clearErrors);
-
-    if (errors?.type === "totalRatioMax" || errors?.type === "ratioNegative") {
+    if (checkCompositionRatio(getValues, setError, clearErrors)) {
       return;
     }
 

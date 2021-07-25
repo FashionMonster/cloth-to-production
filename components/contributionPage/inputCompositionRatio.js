@@ -1,5 +1,3 @@
-import { checkCompositionRatio } from "../../utils/checkCompositionRatio";
-
 //素材比率コンポーネント
 const InputCompositionRatio = (props) => {
   return (
@@ -9,13 +7,13 @@ const InputCompositionRatio = (props) => {
         name={props.name}
         className={`w-${props.width} h-8 border border-solid rounded-sm border-gray-400 disabled:bg-gray-100 disabled:text-black`}
         ref={props.register}
-        onChange={() =>
-          checkCompositionRatio(
-            props.getValues,
-            props.setError,
-            props.clearErrors
-          )
-        }
+        // onChange={() =>
+        //   checkCompositionRatio(
+        //     props.getValues,
+        //     props.setError,
+        //     props.clearErrors
+        //   )
+        // }
         disabled={props.isDisabled}
         defaultValue={props.defaultValue}
       />
