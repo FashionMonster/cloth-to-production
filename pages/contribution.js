@@ -62,6 +62,11 @@ export default function Contribute() {
     mutation.mutate(data);
   };
 
+  //投稿バリデーションエラー時
+  const handleOnError = (errors) => {
+    console.log(errors);
+  };
+
   const mutation = useMutation(
     (formData) => {
       //FireBase Storageに画像アップロード
@@ -122,7 +127,7 @@ export default function Contribute() {
         </p>
         <main className="grid grid-cols-contents">
           <form
-            onSubmit={handleSubmit(insertContribution)}
+            onSubmit={handleSubmit(insertContribution, handleOnError)}
             className="col-start-2 col-end-3 grid grid-cols-2"
           >
             {/* ファイル選択(画面左) */}
