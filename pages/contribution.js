@@ -50,6 +50,13 @@ export default function Contribute() {
 
   //投稿イベント
   const insertContribution = (data) => {
+    if (
+      errors.compositionRatio2.type !== "" ||
+      errors.compositionRatio2.type !== null
+    ) {
+      return;
+    }
+
     //拡張子チェック
     for (const file of imgFile) {
       if (!isImageExt(file.fileName)) {
@@ -60,11 +67,6 @@ export default function Contribute() {
     }
 
     mutation.mutate(data);
-  };
-
-  //投稿バリデーションエラー時
-  const handleOnError = (errors) => {
-    console.log(errors);
   };
 
   const mutation = useMutation(
@@ -127,7 +129,7 @@ export default function Contribute() {
         </p>
         <main className="grid grid-cols-contents">
           <form
-            onSubmit={handleSubmit(insertContribution, handleOnError)}
+            onSubmit={handleSubmit(insertContribution)}
             className="col-start-2 col-end-3 grid grid-cols-2"
           >
             {/* ファイル選択(画面左) */}
