@@ -50,13 +50,13 @@ export default function Contribute() {
 
   //投稿イベント
   const insertContribution = (data) => {
-    if (errors.compositionRatio2.type === "totalRatioMax") {
+    if (errors?.type === "totalRatioMax") {
       setError("compositionRatio2", {
         type: "totalRatioMax",
         message: "合計最大値は100です",
       });
       return;
-    } else if (errors.compositionRatio2.type === "ratioNegative") {
+    } else if (errors?.type === "ratioNegative") {
       setError("compositionRatio2", {
         type: "ratioNegative",
         message: "最小値は1です",
